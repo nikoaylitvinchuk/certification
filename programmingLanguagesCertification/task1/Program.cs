@@ -20,7 +20,7 @@ void PrintRewersNaturalNumbers(int m, int n)
 }
 
 int m = 1;
-int n = 5;
+int n = -5;
 
 if (m >= 0 && n >= 0)
 {
@@ -32,4 +32,8 @@ if (m >= 0 && n >= 0)
     {
         PrintRewersNaturalNumbers(m, n);
     }
+}
+else
+{
+    Console.WriteLine("Ошибка ввода!");
 }
