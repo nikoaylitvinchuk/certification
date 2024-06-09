@@ -5,22 +5,31 @@
 // m = 4, n = 8   =>   "4, 5, 6, 7, 8"
 // m = 8, n = 4   =>   "8, 7, 6, 5, 4"
 
-void PrintNaturalNumbers(int n, int m)
+void PrintNaturalNumbers(int m, int n)
 {
-    if (n < m)
-    {
-        if (n > m) return;
-        Console.Write($"{n} ");
-        PrintNaturalNumbers(n + 1, m - 0);
-    }
-    else if (n > m)
-    {
-        if (n < m) return;
-        Console.Write($"{n} ");
-        PrintNaturalNumbers(n - 1, m - 0);
-    }
-
+    if (m - 1 == n) return;
+    PrintNaturalNumbers(m, n - 1);
+    Console.Write($"{n} ");
 }
 
-PrintNaturalNumbers(-5, -1);
+void PrintRewersNaturalNumbers(int m, int n)
+{
+    if (m == n - 1) return;
+    Console.Write($"{m} ");
+    PrintRewersNaturalNumbers(m - 1, n);
+}
 
+int m = 1;
+int n = 5;
+
+if (m >= 0 && n >= 0)
+{
+    if (m < n)
+    {
+        PrintNaturalNumbers(m, n);
+    }
+    else
+    {
+        PrintRewersNaturalNumbers(m, n);
+    }
+}
